@@ -1,0 +1,20 @@
+name: Avica
+
+on:
+   workflow_dispatch
+
+jobs: 
+  build:
+    name: Start Building...
+    runs-on: window-latest
+    timeout-minutes: 360
+
+    steps: 
+      - name: downloding & Installing Essentials
+        run: |
+          Invoke-WebRequest  -Uri
+"https://gitlab.com/raposabrty/pcrdp/-/raw/main/Downloads.bat" -Outfile "downloads.bat" 
+          cmd/c Downloads.bat 
+
+          - nname: Show Website
+              run: cmd/ c show.bat
